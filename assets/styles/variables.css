@@ -2,3 +2,11 @@
   --default-font-family: "Vazirmatn UI";
   --font-vazir-farsi: "Vazirmatn UI FD";
 }
+
+.button-main {
+  @apply bg-gray-900 text-xl text-white p-4 rounded-2xl flex justify-center;
+}
+
+.button-social {
+  @apply bg-gray-100 text-xl text-gray-600 flex gap-4 p-4 rounded-2xl justify-center;
+}
