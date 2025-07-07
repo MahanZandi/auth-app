@@ -37,8 +37,8 @@ const Input: React.FC<InputProps> = ({
               {...register("password", {
                 required: "وارد کردن رمز عبور الزامی است",
                 minLength: {
-                  value: 6,
-                  message: "رمز عبور باید حداقل 6 کاراکتر باشد",
+                  value: 3,
+                  message: "رمز عبور باید حداقل 3 کاراکتر باشد",
                 },
               })}
             />
@@ -75,6 +75,27 @@ const Input: React.FC<InputProps> = ({
           />
           {errors.email && (
             <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
+          )}
+        </>
+      )}
+      {type === "text" && (
+        <>
+          <input
+            className={`${
+              errors.text ? "border-red-500" : " border-gray-400"
+            } bg-gray-100 border border-gray-400 p-4 rounded-xl w-full placeholder:text-gray-400 text-sm`}
+            type={type}
+            placeholder={placeholder}
+            {...register("text", {
+              required: "وارد کردن نام الزامی است",
+              minLength: {
+                value: 3,
+                message: "نام باید حداقل ۳ کاراکتر باشد",
+              },
+            })}
+          />
+          {errors.text && (
+            <p className="text-red-500 text-sm mt-2">{errors.text.message}</p>
           )}
         </>
       )}
